@@ -292,7 +292,7 @@ p_{ij} = \frac{q_i \mathcal{N}(\mathbf{x}_j; \boldsymbol\mu_i, S_i)}{\sum_\ell q
 
 ### Setup
 - Project each point to $z_j = \mathbf{w}^\top \mathbf{x}_j$.
-- **Signal** = squared distance between the projected class means: $\left(\mathbf{w}^\top(\hat{\boldsymbol\mu}_2 - \hat{\boldsymbol\mu}_1)\right)^2$. It is proportional to the between-class variance $\hat p_1 \hat p_2 (\hat\mu_{z2} - \hat\mu_{z1})^2$.
+- **Signal** = squared distance between the projected class means: $$\left(\mathbf{w}^\top(\hat{\boldsymbol{\mu}}_2 - \hat{\boldsymbol{\mu}}_1)\right)^2$$. It is proportional to the between-class variance $\hat p_1 \hat p_2 (\hat\mu_{z2} - \hat\mu_{z1})^2$.
 - **Noise** = average within-class variance: $\mathbf{w}^\top \hat S_{x.avg}\mathbf{w}$, where $\hat S_{x.avg} = \hat p_1 \hat S_1 + \hat p_2 \hat S_2$.
 - Objective:
 
