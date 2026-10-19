@@ -259,17 +259,17 @@ Setup: one point at $0$, $m$ points at $a$, $m$ points at $a + b$, with $a \le b
 p_{ij} = \frac{q_i \mathcal{N}(\mathbf{x}_j; \boldsymbol\mu_i, S_i)}{\sum_\ell q_\ell \mathcal{N}(\mathbf{x}_j; \boldsymbol\mu_\ell, S_\ell)}
 ```
 
-- **VQ compression:** encode each point as its cluster index ($\log_2 k$ bits) and decode it as the center. The distortion is the average cost, and it falls as $k$ (the rate) rises.
+- **VQ compression:** encode each point as its cluster index ( $\log_2 k$ bits) and decode it as the center. The distortion is the average cost, and it falls as $k$ (the rate) rises.
 - Also know the names spectral clustering and DBSCAN.
 
 ---
 
 ## 6. Linear decision rules & hyperplanes (Lecture 4)
 - **Affine map:** $\mathbf{x} \mapsto W^\top \mathbf{x} + \mathbf{b}$. It is used for:
-  - dimensionality reduction ($k < d$; e.g. PCA)
-  - regression ($k = 1$)
-  - binary classification ($\mathrm{sign}(\mathbf{w}^\top \mathbf{x} + b)$)
-  - $m$-class classification ($\arg\max_\ell \mathbf{w}_\ell^\top \mathbf{x} + b_\ell$)
+  - dimensionality reduction ( $k < d$; e.g. PCA)
+  - regression ( $k = 1$)
+  - binary classification ( $\mathrm{sign}(\mathbf{w}^\top \mathbf{x} + b)$)
+  - $m$-class classification ( $\arg\max_\ell \mathbf{w}_\ell^\top \mathbf{x} + b_\ell$)
 - **k-means is a linear rule** (so $\mathbf{w}_\ell = 2\boldsymbol\mu_\ell$ and $b_\ell = -\lVert \boldsymbol\mu_\ell \rVert^2$):
 
 ```math
@@ -394,7 +394,7 @@ Turn a time series into regression: $\hat a_{t+1} = w_0 a_t + w_1 a_{t-1} + b$.
 - **Reduction to OLS:** augment the data with $d$ fake points $(\sqrt{\lambda}\mathbf{e}_i, 0)$. Then $\tilde{\mathbb{X}}_{ridge} = [\sqrt{\lambda}I_d, \tilde{\mathbb{X}}]$ and $\tilde{\mathbb{Y}}_{ridge} = [\mathbf{0}_d^\top, \tilde{\mathbb{Y}}]$.
 - **Weighted ridge:** replace $1/n$ by weights $\gamma_j$ in all means and covariances.
 - **Polynomial ridge:** use the feature map $\boldsymbol\psi(x) = (x, x^2, \dots, x^d)^\top$. The model is nonlinear in $x$ but **linear in the parameters**, so it is ordinary ridge regression on $\boldsymbol\psi_j$.
-- **LASSO** ($\ell_1$ penalty) gives sparse $\mathbf{w}$. **Huber loss** gives robustness to outliers. Neither has a closed form (use subgradient methods).
+- **LASSO** ( $\ell_1$ penalty) gives sparse $\mathbf{w}$. **Huber loss** gives robustness to outliers. Neither has a closed form (use subgradient methods).
 
 ### HW4.4 takeaways
 - **Normalize with training-set statistics only**, and apply the same transform to the test set.
