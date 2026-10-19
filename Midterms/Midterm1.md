@@ -192,7 +192,7 @@ h_{kNN}(x) = \frac1k \sum_{j=i}^{i+k-1} y_j \quad\text{for}\quad \frac12(x_{i-1}
 ## 5. Clustering (Lecture 3, HW3)
 
 ### k-means / k-centers (Lloyd's algorithm)
-- **Cost:** $\sum_j \mathrm{dist}(\mathbf{x}_j, \boldsymbol{\mu}_{y_j})^q$. For Euclidean distance with $q = 2$, this is the WCSS.
+- **Cost:** $\sum_j \mathrm{dist}(\mathbf{x}_j, \boldsymbol{\mu}_{y_j})^q$ . For Euclidean distance with $q = 2$, this is the WCSS.
 - **Alternate two steps:**
   1. Assign each point to its nearest center.
   2. Recompute each center as the best center of its cluster:
