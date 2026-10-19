@@ -270,7 +270,7 @@ p_{ij} = \frac{q_i \mathcal{N}(\mathbf{x}_j; \boldsymbol\mu_i, S_i)}{\sum_\ell q
   - regression ( $k = 1$ )
   - binary classification ( $\mathrm{sign}(\mathbf{w}^\top \mathbf{x} + b)$ )
   - $m$-class classification ( $\arg\max\_{\ell} \mathbf{w}\_{\ell}^\top \mathbf{x} + b\_{\ell}$ )
-- **k-means is a linear rule** (so $\mathbf{w}_\ell = 2\boldsymbol\mu_\ell$ and $b_\ell = -\lVert \boldsymbol\mu_\ell \rVert^2$ ):
+- **k-means is a linear rule** (so $\mathbf{w}\_{\ell} = 2\boldsymbol{\mu}\_{\ell}$ and $b_\ell = -\lVert \boldsymbol\mu_\ell \rVert^2$ ):
 
 ```math
 \arg\min_\ell \lVert \mathbf{x} - \boldsymbol\mu_\ell \rVert^2 = \arg\max_\ell \left(2\boldsymbol\mu_\ell^\top \mathbf{x} - \lVert \boldsymbol\mu_\ell \rVert^2\right)
