@@ -23,7 +23,7 @@
 ## 1. Math toolkit (HW1) — you will use this everywhere
 
 ### Linear algebra
-- Norm and inner product: $\lVert \mathbf{v} \rVert = \sqrt{\mathbf{v}^\top \mathbf{v}}$. Orthogonal means $\mathbf{u}^\top \mathbf{v} = 0$.
+- Norm and inner product: $\lVert \mathbf{v} \rVert = \sqrt{\mathbf{v}^\top \mathbf{v}}$ . Orthogonal means $\mathbf{u}^\top \mathbf{v} = 0$.
 - Linear independence of the columns of $V$: the only solution of $V\mathbf{a} = \mathbf{0}$ is $\mathbf{a} = \mathbf{0}$ (equivalently, $V^\top V$ is invertible).
 - Eigenvector: a **nonzero** $\mathbf{u}$ with $B\mathbf{u} = \lambda \mathbf{u}$. The zero vector is never an eigenvector (HW1.1e trap).
 - 2×2 inverse:
