@@ -110,7 +110,7 @@ Proof idea for the median: let $N_{<}(y)$ and $N_{>}(y)$ be the number of labels
 - **kNN classification:** majority vote among the $k$ nearest neighbors. This is MAP/MPE using $\hat p_{kNN}(y \mid \mathbf{x}) = k_y(\mathbf{x})/k$.
 - **kNN regression:** the mean of the $k$ neighbors' labels. This is MMSE for the local empirical MSE and estimates $E[Y \mid \mathbf{X} = \mathbf{x}]$.
 - **Small $k$:** jagged boundary, high variance, unstable (one mislabeled point changes the boundary).
-- **Large $k$:** smooth boundary, high bias. As $k \to n$, every point gets the majority class (HW2.5d: CCR becomes $80/200$).
+- **Large $k$:** smooth boundary, high bias. As $k \to n$, every point gets the majority class (HW2.5d: CCR becomes $80/200$ ).
 
 ### Voronoi geometry (HW2.1)
 - **Euclidean bisector** of $\mathbf{x}_A, \mathbf{x}_B$ — a hyperplane perpendicular to $\mathbf{x}_B - \mathbf{x}_A$ through their midpoint:
@@ -157,7 +157,7 @@ h_{kNN}(x) = \frac1k \sum_{j=i}^{i+k-1} y_j \quad\text{for}\quad \frac12(x_{i-1}
   - KL divergence: asymmetric, for pmfs.
   - Jensen–Shannon divergence: symmetric.
 - **Weighted kNN / kernel:** weights $w \propto \psi\left(\lVert \mathbf{x} - \mathbf{x}' \rVert / \alpha\right)$. This is MAP based on a kernel density estimate. The bandwidth $\alpha$ plays the role of $k$.
-- **Consistency:** needs $k_n \to \infty$ and $k_n/n \to 0$ (e.g. $k_n = \log n$).
+- **Consistency:** needs $k_n \to \infty$ and $k_n/n \to 0$ (e.g. $k_n = \log n$ ).
 - **Curse of dimensionality:** to capture a fraction $f$ of uniform data in a unit ball you need radius $r = f^{1/d}$. For $d = 10$ and $f = 0.1$, $r \approx 0.8$. Data needs grow exponentially in $d$.
 
 ---
@@ -165,7 +165,7 @@ h_{kNN}(x) = \frac1k \sum_{j=i}^{i+k-1} y_j \quad\text{for}\quad \frac12(x_{i-1}
 ## 4. Performance metrics (classification slides)
 
 - **Confusion matrix:** $\hat n_{ij}$ = number of class-$j$ samples **classified as** $i$ (rows = decision, columns = truth). CCR is the trace divided by $n$.
-- **Binary rates** (with $n_+ = TP + FN$, $n_- = FP + TN$, $\hat n_+ = TP + FP$):
+- **Binary rates** (with $n_+ = TP + FN$, $n_- = FP + TN$, $\hat n_+ = TP + FP$ ):
   - TPR = recall = sensitivity = $TP/n_+$
   - FPR = false-alarm rate = type I error = $FP/n_-$
   - FNR = miss rate = type II error
@@ -267,10 +267,10 @@ p_{ij} = \frac{q_i \mathcal{N}(\mathbf{x}_j; \boldsymbol\mu_i, S_i)}{\sum_\ell q
 ## 6. Linear decision rules & hyperplanes (Lecture 4)
 - **Affine map:** $\mathbf{x} \mapsto W^\top \mathbf{x} + \mathbf{b}$. It is used for:
   - dimensionality reduction ( $k < d$; e.g. PCA)
-  - regression ( $k = 1$)
-  - binary classification ( $\mathrm{sign}(\mathbf{w}^\top \mathbf{x} + b)$)
-  - $m$-class classification ( $\arg\max_\ell \mathbf{w}_\ell^\top \mathbf{x} + b_\ell$)
-- **k-means is a linear rule** (so $\mathbf{w}_\ell = 2\boldsymbol\mu_\ell$ and $b_\ell = -\lVert \boldsymbol\mu_\ell \rVert^2$):
+  - regression ( $k = 1$ )
+  - binary classification ( $\mathrm{sign}(\mathbf{w}^\top \mathbf{x} + b)$ )
+  - $m$-class classification ( $\arg\max_\ell \mathbf{w}_\ell^\top \mathbf{x} + b_\ell$ )
+- **k-means is a linear rule** (so $\mathbf{w}_\ell = 2\boldsymbol\mu_\ell$ and $b_\ell = -\lVert \boldsymbol\mu_\ell \rVert^2$ ):
 
 ```math
 \arg\min_\ell \lVert \mathbf{x} - \boldsymbol\mu_\ell \rVert^2 = \arg\max_\ell \left(2\boldsymbol\mu_\ell^\top \mathbf{x} - \lVert \boldsymbol\mu_\ell \rVert^2\right)
@@ -322,7 +322,7 @@ The best $b$ is an **interval**, not a single point (HW4.3d).
   - Use the pseudoinverse.
   - If the mean difference has a component in the null space, the SNR can be $+\infty$ along that projection.
 - **Regularized LDA:** use $\hat S + \lambda I$. All its eigenvalues are at least $\lambda$, so it is always invertible, and $\lambda$ is tuned by CV.
-- **Optimality:** LDA equals the MAP (min-error) rule for **homoscedastic Gaussian** classes (shared covariance $S$):
+- **Optimality:** LDA equals the MAP (min-error) rule for **homoscedastic Gaussian** classes (shared covariance $S$ ):
 
 ```math
 \mathbf{w} = S^{-1}(\boldsymbol\mu_2 - \boldsymbol\mu_1), \qquad b = \ln p_2 - \ln p_1 - \frac12\left(\boldsymbol\mu_2^\top S^{-1}\boldsymbol\mu_2 - \boldsymbol\mu_1^\top S^{-1}\boldsymbol\mu_1\right)
@@ -389,7 +389,7 @@ Turn a time series into regression: $\hat a_{t+1} = w_0 a_t + w_1 a_{t-1} + b$.
 ```
 
 - **Mind the $\lambda/n$**, which comes from where the $1/n$ sits in the objective.
-- The inverse always exists (eigenvalues $\ge \lambda/n > 0$), which also improves the condition number.
+- The inverse always exists (eigenvalues $\ge \lambda/n > 0$ ), which also improves the condition number.
 - The offset $b$ is **not** penalized.
 - **Reduction to OLS:** augment the data with $d$ fake points $(\sqrt{\lambda}\mathbf{e}_i, 0)$. Then $\tilde{\mathbb{X}}_{ridge} = [\sqrt{\lambda}I_d, \tilde{\mathbb{X}}]$ and $\tilde{\mathbb{Y}}_{ridge} = [\mathbf{0}_d^\top, \tilde{\mathbb{Y}}]$.
 - **Weighted ridge:** replace $1/n$ by weights $\gamma_j$ in all means and covariances.
@@ -399,7 +399,7 @@ Turn a time series into regression: $\hat a_{t+1} = w_0 a_t + w_1 a_{t-1} + b$.
 ### HW4.4 takeaways
 - **Normalize with training-set statistics only**, and apply the same transform to the test set.
 - As $\lambda$ increases, all coefficients shrink toward 0. The coefficients that stay large the longest belong to the most important features (lcavol, then lweight/svi).
-- Training MSE rises monotonically with $\lambda$. Test MSE dips first (minimum near $\ln\lambda \approx 3$), so CV would pick $\lambda > 0$.
+- Training MSE rises monotonically with $\lambda$. Test MSE dips first (minimum near $\ln\lambda \approx 3$ ), so CV would pick $\lambda > 0$.
 - $\lambda = 0$ reduces ridge to OLS.
 
 ---
@@ -475,7 +475,7 @@ Ridge-train(D, lambda):
 4. Metric definitions (TPR, FPR, precision, F1, CI) and ROC properties.
 5. k-means and DP-means steps, plus the HW3.1 WCSS formulas and $P(\text{bad})$.
 6. The LDA SNR, $\mathbf{w}_{LDA}$, the $b$-search, and the Gaussian MAP $\mathbf{w}, b$.
-7. OLS and ridge formulas (with $\lambda/n$), the MSE formula, the ridge data augmentation, and $C_n$.
+7. OLS and ridge formulas (with $\lambda/n$ ), the MSE formula, the ridge data augmentation, and $C_n$.
 8. A worked mini-example each for HW4.1 and HW4.2.
 
 ---
